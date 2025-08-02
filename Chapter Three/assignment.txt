@@ -1,0 +1,42 @@
+#3.2
+a = b = 7
+print("a = ", a, "\nb =", b)
+#output: a =  7 b = 7
+
+#3.3
+This code prints 9 rows and in each row it prints < when the row number is odd while > when the row number is even.
+
+#3.4
+for number in range(3):
+	for number in range(8):
+		print("@")
+	print()
+	
+#3.5
+number1 = int(input("Enter first integer: "))
+number2 = int(input("Enter second integer: "))
+
+if number1 == number2:
+	print(number1, "is equal to",  number2)
+else
+	print(number1, "is not equal to",  number2)
+if number1 < number2:
+	print(number1, "is less than",  number2)
+else
+	print(number1, "is not less than",  number2)
+if number1 <= number2:
+	print(number1, "is less than or equal to",  number2)
+else
+	print(number1, "is not less than or equal to",  number2)
+
+#3.6
+user_response = input("What is your problem?" )
+user_response2 = input("Have you had this problem before (yes or no)?" )
+if user_response2 == 'yes':
+	print("Well, you have it again.")
+elif user_response2 == 'no':
+	print("Well, you have it now.")
+	
+#3.7
+
+

@@ -1,0 +1,19 @@
+ 3.31 (Intro to Data Science: Categorical Data) 
+ Frequency distribution like frequency tables; Bar charts; Pie charts
+ 
+ 
+ 3.30 (Intro to Data Science: Outliers)
+ Mean is most affected by outliers. Mean is the summation of values of a data set divided by the  count of the values.
+ If there is the presence of extreme value, the mean value will tilt towards the extreme value, thereby becoming a less reliable measure of central tendency.
+ Mode is not affected by outliers, because the mode represents the value that appears most frequently in a dataset other than the actual values themselves.
+ The median is less affeted by outliers because it represents the middle value when te data is ordered, so extreme values above or below the median have less influence on its final value.
+ 
+ 
+ 3.29 (Intro to Data Science: Problem with the Median) 
+ For an even number of dataset, the two middle values will be averaged resulting in a new value that does not correspond to any actual data point in the data set making it difficult to interpret.
+ 
+ 3.28 (Intro to Data Science: Mean, Median and Mode) 
+ Calculate the mean, median and
+ mode of the values 9, 11, 22, 34, 17, 22, 34, 22 and 40.
+  Suppose the values included an
+other 34. What problem might occur? 

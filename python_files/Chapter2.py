@@ -111,15 +111,17 @@ print(firstDigit, "   ", secondDigit, "   ", thirdDigit, "   ", fourthDigit, "  
 
 #Exercise 2.12 (7% Investment Return) //Do this in java later this evening using loop
 principal = 1000
-interestRate = 7
+PERCENT = 100
+interestRate = 7 / PERCENT
+
 nthYear = 10
-interest_amount = principal * (1 + interestRate) ** nthYear
+interest_amount = principal * (1 + (interestRate)) ** nthYear
 print("At the end of 10 years, the amount on deposit is ", interest_amount )
 nthYear = 20
-interest_amount = principal * (1 + interestRate) ** nthYear
+interest_amount = principal * (1 + (interestRate)) ** nthYear
 print("At the end of 20 years, the amount on deposit is ", interest_amount)
 nthYear = 30
-interest_amount = principal * (1 + interestRate) ** nthYear
+interest_amount = principal * (1 + (interestRate)) ** nthYear
 print("At the end of 30 years, the amount on deposit is ", interest_amount)
 
 
