@@ -11,3 +11,4 @@ else:
 		print("Number is a palindrome")
 	else:
 		print("Not a palindrome")
+		
