@@ -1,0 +1,12 @@
+import unittest
+import inspect
+import list_of_strings_function
+
+
+
+class TestGetLengthOfFunction(unittest.TestCase):
+	def test_that_get_squares_of_function_accepts_1_argument(self):
+		function_signature = inspect.signature(list_of_strings_function.getLengthOf)
+		dic_parameter = function_signature.parameters
+		self.assertEqual(len(dic_parameter), 1)
+
