@@ -1,5 +1,4 @@
-#4.11: Guess the Number Modification
-
+#4.12: Simulation: The Tortoise and the Hare
 import random
 
 guess_number = random.randrange(1, 1000)
@@ -25,6 +24,7 @@ print("Congratulations!")
 
 	
 	
+
 
 
 
