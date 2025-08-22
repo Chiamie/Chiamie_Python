@@ -1,0 +1,56 @@
+#4.1 (Discussion: else Clause)
+The program would not execute any satement for conditions not captured in the if clauses.
+
+
+
+
+
+#4.2(Discussion: Function-Call Stack)
+StackOverflow happens which means the function-call stack runs out of memory.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#4.3(What’s Wrong with This Code?) What is wrong with the following cube function’s definition?
+def cube(x):
+	"""Calculate the cube of x."""
+	x ** 3
+
+print('The cube of 2 is', cube(2))
+
+#The above code is wrong because it has no return statement.
+
+
+#4.4 (What’s Does This Code Do?) What does the following mystery function do? Assume you pass the list [1, 2, 3, 4, 5] as an argument.
+def mystery(x):
+	y = 0
+	for value in x:
+		y += value ** 2
+	return y
+#This function takes a list as an arguement and finds the sum of the squares of each element in the list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
