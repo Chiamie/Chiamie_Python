@@ -7,11 +7,14 @@ def generate_vanity_phone_numbers(string):
 	string = string.upper()
 	
 	if len(string) != 7:
-		raise ValueError("String must be 7 characters")
+		raise ValueError("string must be 7 characters")
 		
 	for letter in string:
 		if letter == 'Q' or letter == 'Z':
-			raise ValueError("String character must not contain Q or Z")
+			raise ValueError("string character must not contain Q or Z")
+			
+	if not string.isalpha():
+		raise ValueError("string characters must all be letters")
 			
 	combinations = [""]
 	for character in string:
