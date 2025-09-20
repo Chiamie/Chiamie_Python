@@ -29,4 +29,4 @@ def number_word_generator(phone_number):
 seven_digit_number = "432-9586"
 print(number_word_generator(seven_digit_number))
 length = number_word_generator(seven_digit_number)
-print("Derived " + str(len(length)) + " combinations")
+print("This phone number can derive " + str(len(length)) + " combinations")
