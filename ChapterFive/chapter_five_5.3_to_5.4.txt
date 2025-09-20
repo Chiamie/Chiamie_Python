@@ -1,0 +1,17 @@
+5.2(What Does This Code Do?) 
+def mystery(sequence):
+ return sequence == sorted(sequence)
+ 
+Answer: This could takes the collection sequence and sorts it in ascending order.
+Then compares for equality the sequence collection with the sorted squence collection.
+This will return True if sequenece is same as sorted sequence otherwise it returns FaLSE.
+ 
+ 
+5.3 (Fill in the Missing Code)
+[*** for x in [69, 77, 54]]
+list(map(lambda ***, [69, 77, 54]))
+ 
+Answer:
+(x, x * 0.0254) for x in [69, 77, 54]
+ 
+list(map(lambda x: (x, x * 0.0254), [69, 77, 54]))

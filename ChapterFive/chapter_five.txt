@@ -1,0 +1,32 @@
+5.1 (What’s Wrong with This Code?) 
+ a) day, high_temperature = ('Monday', 87, 65) 
+Answer: 
+This will give a ValueError since the number of variables to the left of the assignment symbol is not identical to
+the number of elements in the sequence on the right.
+To correct this we might have:
+day, high_temperature, low_temperature = ('Monday', 87, 65)   OR
+day, high_temperature* = ('Monday', 87, 65)
+
+
+b) numbers = [1, 2, 3, 4, 5]
+ numbers[10] 
+ Answer:
+ This will result in an indexOutOfBounds Error since the length of the list is not equal to 11.
+ There is no value for list at index 10.
+ 
+ 
+ c) name = 'amanda'
+ name[0] = 'A'
+ Answer:
+ Character at name index 0 is a lowercase a not uppercase A. So the result is incorrect.
+ 
+ numbers = [1, 2, 3, 4, 5]
+ numbers[3.4]
+ Answer:
+ The expression numbers[3.4] is wrong because the indices of a collection are whole numbers not floatimg point numbers.
+ 
+ 
+ student_tuple = ('Amanda', 'Blue', [98, 75, 87])
+ student_tuple[0] = 'Ariana'
+ Answer:
+ The value 

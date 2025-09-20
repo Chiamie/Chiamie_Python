@@ -1,0 +1,8 @@
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+print(alphabet[0:15])
+print(alphabet[:15])
+print(alphabet[15:27])
+print(alphabet[15:])
+print(alphabet[0:27:2])
+print(alphabet[::-1])
+print(alphabet[26::-3])
