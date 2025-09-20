@@ -4,7 +4,15 @@
 
 def generate_vanity_phone_numbers(string):
 	digit_to_letters = [("2", "ABC"), ("3", "DEF"), ("4", "GHI"), ("5", "JKL"), ("6", "MNO"), ("7", "PRS"), ("8", "TUV"), ("9", "WXY")]
+	string = string.upper()
 	
+	if len(string) != 7:
+		raise ValueError("String must be 7 characters")
+		
+	for letter in string:
+		if letter == 'Q' or letter == 'Z':
+			raise ValueError("String character must not contain Q or Z")
+			
 	combinations = [""]
 	for character in string:
 		new_combination = []
