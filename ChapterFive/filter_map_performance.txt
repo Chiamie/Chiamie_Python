@@ -1,0 +1,26 @@
+ 5.17 (Filter/Map Performance) With regard to the following code:
+ 
+ 
+numbers = [10, 3, 7, 1, 9, 4, 2, 8, 5, 6]
+list(map(lambda x: x ** 2, filter(lambda x: x % 2 != 0, numbers)))
+
+Answer:
+a) The filter operation calls its lambda argument for each element in the numbers list, which has 10 elements. Therefore, the filter lambda is called 10 times.
+
+b) The filter operation returns an iterator that yields only the odd numbers from the numbers list. Let's count the odd numbers:
+
+3, 7, 1, 9, 5
+
+There are 5 odd numbers. The map operation calls its lambda argument for each of these 5 numbers. Therefore, the map lambda is called 5 times.
+
+c) If we reverse the filter and map operations:
+
+
+result = list(filter(lambda x: x % 2 != 0, map(lambda x: x ** 2, numbers)))
+
+
+The map operation will be called for each element in the numbers list, which has 10 elements. Therefore, the map lambda will be called 10 times.
+
+Note that the filter lambda will still be called, but it will be called for each squared number, and it will filter out the even squares. The number of times the filter lambda 
+
+20, 6, 14, 2, 18, 8, 4, 16, 10, 12
