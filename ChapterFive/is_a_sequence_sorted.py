@@ -1,10 +1,8 @@
 #5.14 (Is a Sequence Sorted?)
  
 def is_ordered(string):
-	if sorted(string) != string:
-		return False
-	return True
-	
+	return sorted(string) != string
+			
 list_of_ages = [34, 12, 20, 8]
 print(is_ordered(list_of_ages))
 
