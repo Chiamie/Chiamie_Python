@@ -7,10 +7,13 @@ def creating_a_list():
 	return list_of_integers
 	
 
+list_of_integers = creating_a_list()
 
-
-
+#filter the list to get even numbers
+def get_even_numbers_of(x):
+	return x % 2 == 0
 	
+list_of_even_integers = list(filter(get_even_numbers_of, list_of_integers))
 
 
 		
