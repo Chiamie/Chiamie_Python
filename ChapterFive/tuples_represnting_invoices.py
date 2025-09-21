@@ -30,3 +30,36 @@ invoice_description_with_sorted_quantity = sorted(tuple_containing_description_a
 print(invoice_description_with_sorted_quantity)
 displaylines()
 
+#5.15d: Used map to extract description and value(quantity * price) from the invoice, then sorted the tuple by value
+
+def extract_description_and_value_of_the_invoice(tuple_item):
+	value = tuple_item[2] * tuple_item[3]
+	return tuple_item[1], value
+	
+tuple_containing_description_and_value_of_invoice = list(map(extract_description_and_value_of_the_invoice, a_list_of_invoice_tuples))
+invoice_description_with_sorted_value = sorted(tuple_containing_description_and_value_of_invoice, key=itemgetter(1))
+print(invoice_description_with_sorted_value)
+displaylines()
+
+#5.15e: Modify 5.15d to filter the results to invoice values in the range 200 to 500
+
+def is_in_range(tuple_item):
+	return 200 <= tuple_item[1] <= 500
+
+filtered_tuples = list(filter(is_in_range, invoice_description_with_sorted_value))
+print(filtered_tuples)		
+			
+#5.15f: Calculate the total of all the invoices.
+
+
+
+
+
+
+
+
+
+
+
+
+
