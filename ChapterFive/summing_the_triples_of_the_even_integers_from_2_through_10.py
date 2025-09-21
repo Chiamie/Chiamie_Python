@@ -16,7 +16,7 @@ def get_even_numbers_of(x):
 list_of_even_integers = list(filter(get_even_numbers_of, list_of_integers))
 
 
-#map the list of even numbers ny tripling each of them
+#map the list of even numbers by tripling each of them
 def triple_each_element_of(x):
 	return x ** 3
 	
@@ -32,13 +32,15 @@ print("The total of the triples of the even integers from 1 through 10 is " + st
 
 #using a list comprehension to create a list of integers
 
-		
+list_of_integers = [item for item in range(1, 11)]		
 
+list_of_even_integers = [item for item in list_of_integers if item % 2 == 0]
 
+list_of_tripled_integers = [item ** 3 for item in list_of_even_integers]
 
+total_of_the_triples_of_even_numbers = sum(list_of_tripled_integers)
 
-
-
+print(f"The total of the triples of the even integers from 1 through 10 is {total_of_the_triples_of_even_numbers}")
 
 
 
