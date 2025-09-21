@@ -34,10 +34,13 @@ print("The total of the triples of the even integers from 1 through 10 is " + st
 
 list_of_integers = [item for item in range(1, 11)]		
 
+#using a list comprehension to filter even numbers
 list_of_even_integers = [item for item in list_of_integers if item % 2 == 0]
 
+#using a list comprehension to triple each of the even numbers
 list_of_tripled_integers = [item ** 3 for item in list_of_even_integers]
 
+#getting the sum of the tripled even numbers
 total_of_the_triples_of_even_numbers = sum(list_of_tripled_integers)
 
 print(f"The total of the triples of the even integers from 1 through 10 is {total_of_the_triples_of_even_numbers}")
