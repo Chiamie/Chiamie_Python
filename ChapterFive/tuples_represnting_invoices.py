@@ -14,31 +14,7 @@ tuples_invoice_by_des = sorted(a_list_of_invoice_tuples, key = itemgetter(1))
 print(tuples_invoice_by_des)
 displaylines()
 
-#5.15b: Used sorted in built function to arrange the invoice by price
-tuples_invoice_by_price = sorted(a_list_of_invoice_tuples, key = itemgetter(3))
-print(tuples_invoice_by_price)
-displaylines()
+		
 
-#5.15c: Used map to extract description and quantity from the invoice, then sorted the tuple by quantity
-
-def extract_description_and_quantity_from_invoice(tuple_item):
-	return tuple_item[1], tuple_item[2]
-
-tuple_containing_description_and_quantity = list(map(extract_description_and_quantity_from_invoice, a_list_of_invoice_tuples))
-
-invoice_description_with_sorted_quantity = sorted(tuple_containing_description_and_quantity, key=itemgetter(1))
-print(invoice_description_with_sorted_quantity)
-displaylines()
-
-#5.15d: Used map to extract description and value(quantity * price) from the invoice, then sorted the tuple by value
-
-def extract_description_and_value_of_the_invoice(tuple_item):
-	value = tuple_item[2] * tuple_item[3]
-	return tuple_item[1], value
+			
 	
-tuple_containing_description_and_value_of_invoice = list(map(extract_description_and_value_of_the_invoice, a_list_of_invoice_tuples))
-invoice_description_with_sorted_value = sorted(tuple_containing_description_and_value_of_invoice, key=itemgetter(1))
-print(invoice_description_with_sorted_value)
-displaylines()
-
-
