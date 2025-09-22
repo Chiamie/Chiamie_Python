@@ -1,4 +1,4 @@
-
+#6.1 (Discussion: Dictionary Methods)
 items() is used to iterate through tuples of a dictionary’s key value pairs. 
 
 keys() is used to iterate through only a dictionary’s keys.
@@ -6,6 +6,59 @@ keys() is used to iterate through only a dictionary’s keys.
 values() is used to iterate through only a dictionary’s values.
 
 add: dictionary has no method add
+
+
+# 6.2 (What’s Wrong with This Code?) 
+
+from collections import Counter
+text = ('to be or not to be that is the question')
+counter = Counter(text.split())
+for word, count in sorted(counter):
+	print(f'{word:<12}{count}')
+  
+Explanation:
+The code is making using of Counter a dictionary subclass to count the occurrence of a word in a text.
+text.split() this expression splits the word on whitespace by default and creates a Counter object from the result in list.
+Thee count object counts the frquency of each word in the list.
+The counter object outputs a dictionary with each word as a key while the frequency of the word as the value.
+The original code is missing .items(), which is necessary to iterate over the key-value pairs of the Counter object.
+When you iterate over a dictionary object without .items(), you get only the dictionary keys.
+By using items(), you unpack the keys and values into word and count creating a tuple that the sorted function will arrange in alphabetical order.
+
+The corrected code is:
+
+from collections import Counter
+
+text = ('to be or not to be that is the question')
+counter = Counter(text.split())
+for word, count in sorted(counter.items()):
+    print(f'{word:<12}{count}')
+
+
+#6.3 (What Does This Code Do?)
+
+temperatures = {   
+'Monday': [66, 70, 74], 
+ 'Tuesday': [50, 56, 64],
+ 'Wednesday': [75, 80, 83],
+ 'Thursday': [67, 74, 81]
+ }
+for k, v in temperatures.items():
+	print(f'{k}: {sum(v)/len(v):.2f}')
+
+
+The for statement unpacks the dictionary keys and values into k and v respectively.
+Thereby representing each key value pair as a tuple.
+for each value pair it prints the key and the average of the key's value rounded to 2 decimal places.
+
+
+
+
+
+
+
+
+
 
 
 
