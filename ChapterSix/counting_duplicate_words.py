@@ -1,4 +1,5 @@
 #6.5 (Counting Duplicate Words)
+import re
 
 text = ('God is not man, man is not God but man is a god.')
 text_with_no_punctuation = re.sub(r'[^\w\s]', '', text)
