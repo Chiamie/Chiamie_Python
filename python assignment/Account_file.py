@@ -8,6 +8,8 @@ class Account:
         self.name = ""
         self.balance = 0
         self.date_of_birth = ""
+        self.address = ""
+        self.contact = ""
         self.set_name(name)
         self.deposit(balance)
         self.set_date(date_of_birth)
@@ -55,10 +57,13 @@ class Account:
 
     def set_address(self, address):
         self.address = address
+
     def set_contact(self, contact):
         self.contact = contact
 
     def set_date(self, date_of_birth):
+        if not isinstance(date_of_birth, str):
+            raise ValueError("date_of_birth must be a string")
         pattern = r'^(0[1-9]|[12][0-9]|3[01])[/-](0[1-9]|1[012])[/-]\d{4}$'
         if not re.fullmatch(pattern, date_of_birth):
             raise ValueError("Date must be in the format DD-MM-YYYY")

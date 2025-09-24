@@ -4,7 +4,7 @@ from Account_file import Account
 
 class TestSetNameFunction(unittest.TestCase):
     def setUp(self):
-        self.account1 = Account('Ada', 100)
+        self.account1 = Account('Ada', "06-07-1967", 100)
 
     def test_that_set_name_raises_exception_when_name_is_numeric_string(self):
         self.assertRaises(ValueError, self.account1.set_name, '1234')
@@ -55,4 +55,10 @@ class TestSetNameFunction(unittest.TestCase):
 
     def test_that_an_exception_is_raised_when_amount_to_withdraw_is_less_than_0(self):
         self.assertRaises(ValueError, self.account1.withdraw, -18)
+
+    def test_that_an_exception_is_raised_when_date_has_incorrect_format(self):
+        self.assertRaises(ValueError, self.account1.set_date, "1997-13-35")
+
+    def test_that_an_exception_is_raised_when_date_is_not_a_string(self):
+        self.assertRaises(ValueError, self.account1.set_date, 19975)
 
