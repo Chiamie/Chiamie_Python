@@ -1,5 +1,6 @@
 import unittest
 
+from Nokia.Message import Message
 from Nokia.PhoneBook import Phonebook
 
 
@@ -37,6 +38,19 @@ class TestPhoneBook(unittest.TestCase):
         self.phone_book.erase("chiamaka")
         self.assertTrue(self.phone_book.is_empty(), True)
 
-    def test that
+    def test_that_contact_can_be_dialled_through_short_cuts(self):
+        contact = ["chiamaka", "08101235568"]
+        self.phone_book.add_contact(contact)
+
+        result = self.phone_book.speed_dial("chiamaka")
+        self.assertEqual(result, "Dialing chiamaka...")
+
+class TestMessage(unittest.TestCase):
+    def setUp(self):
+        self.message = Message()
+
+    def test_that_inbox_is_empty(self):
+        self.assertTrue(self.message.is_empty(), True)
+
 if __name__ == '__main__':
     unittest.main()
