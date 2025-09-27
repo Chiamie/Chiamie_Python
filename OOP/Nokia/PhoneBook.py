@@ -28,4 +28,7 @@ class Phonebook:
     def get_contact(self):
         return self.contacts_book
 
-    def erase(self):
+    def erase(self, name):
+        if name in self.contacts_book:
+            del self.contacts_book[name]
+

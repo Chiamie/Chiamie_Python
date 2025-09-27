@@ -26,10 +26,17 @@ class TestPhoneBook(unittest.TestCase):
         contact = ["chiamaka", "08101235568"]
         self.phone_book.add_contact(contact)
 
-
         self.phone_book.edit_contact("chiamaka", "08101111111")
         self.assertEqual(self.phone_book.search("chiamaka"),  "08101111111")
 
 
+    def test_that_a_contact_can_be_deleted(self):
+        contact = ["chiamaka", "08101235568"]
+        self.phone_book.add_contact(contact)
+
+        self.phone_book.erase("chiamaka")
+        self.assertTrue(self.phone_book.is_empty(), True)
+
+    def test that
 if __name__ == '__main__':
     unittest.main()
