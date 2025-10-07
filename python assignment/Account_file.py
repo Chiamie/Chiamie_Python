@@ -1,18 +1,37 @@
+import random
 import re
 from decimal import Decimal
 
+
+
+
 class Account:
 
-    def __init__(self, name, date_of_birth, balance):
+    def __init__(self, name, password, date_of_birth, balance):
 
         self.name = ""
+        self.account_number = ""
+        self.password = ""
         self.balance = 0
         self.date_of_birth = ""
         self.address = ""
         self.contact = ""
         self.set_name(name)
+        self.set_password(password)
         self.deposit(balance)
         self.set_date(date_of_birth)
+        self.set_account_number()
+
+
+    def set_account_number(self):
+        for element in self.password:
+            if element.isdigit():
+                self.account_number += element + str(random.randrange(1000, 9999))
+                if len(self.account_number) == 14:
+                    break
+
+    def get_account_number(self, password):
+        return self.account_number
 
     def deposit(self, amount):
         if not isinstance(amount, int):
@@ -24,7 +43,17 @@ class Account:
 
         self.balance += amount
 
-    def withdraw(self, amount):
+    def set_password(self, password):
+        if not isinstance(password, str):
+            raise ValueError("password must be a string")
+        self.password = password
+
+
+    def withdraw(self, amount, password):
+        if not isinstance(password, str):
+            raise ValueError("password must be a string")
+        if self.password != password:
+            raise ValueError("password does not match")
         if amount > self.balance:
             raise ValueError("Amount cannot be greater than balance")
         elif amount < Decimal("0.00"):
@@ -51,7 +80,7 @@ class Account:
             raise ValueError("customer_name must be a string")
 
         if not customer_name.isalpha():
-            raise ValueError("customer_name must be an alphabet")
+            raise ValueError("customer_name must be letters")
         self.name = customer_name
 
 
@@ -59,6 +88,10 @@ class Account:
         self.address = address
 
     def set_contact(self, contact):
+        if not isinstance(contact, str):
+            raise ValueError("contact must be a string")
+        if not contact.isdigit():
+            raise ValueError("contact must be digit")
         self.contact = contact
 
     def set_date(self, date_of_birth):
