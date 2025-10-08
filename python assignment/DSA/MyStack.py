@@ -30,7 +30,29 @@ class MyStack:
         else:
             raise IndexError("Stack Underflow")
 
-    def get_my_stack(self):
+    def size(self):
+        return self.count
+
+    def peek(self):
+        if self.count != 0:
+            self.count -= 1
+            return self.my_stack[self.count]
+        raise Exception("Empty Stack Exception")
+
+    def search(self, value):
+        if self.count != 0:
+            for index in range(0, self.size()):
+                if index == self.size() - 1:
+                    return 1
+                elif self.my_stack[index] == value:
+                    return index
+                else:
+                    return -1
+        raise Exception("Empty Stack Exception")
+
+
+
+def get_my_stack(self):
         return self.my_stack
 
 
