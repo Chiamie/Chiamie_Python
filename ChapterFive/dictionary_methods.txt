@@ -1,0 +1,15 @@
+
+items() is used to iterate through tuples of a dictionary’s key value pairs. 
+
+keys() is used to iterate through only a dictionary’s keys.
+
+values() is used to iterate through only a dictionary’s values.
+
+add: dictionary has no method add
+
+
+
+
+
+
+
