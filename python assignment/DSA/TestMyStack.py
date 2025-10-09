@@ -17,7 +17,7 @@ class TestMyStack(unittest.TestCase):
         self.my_stack.push(3)
         self.my_stack.push(4)
         self.my_stack.push(5)
-        self.assertFalse(self.my_stack.is_empty(), False)
+        self.assertFalse(self.my_stack.is_empty())
 
     def test_that_my_stack_raises_validation_when_stack_is_full(self):
         self.my_stack.push(1)
