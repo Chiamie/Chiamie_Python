@@ -1,4 +1,5 @@
 import collections
+from itertools import count
 
 from DSA.Array import Array
 
@@ -53,39 +54,73 @@ class ArrayList:
 
     def last_index_of(self, value):
         index = -1
-        for counter in range(0, self.size):
+        for counter in range(0, self.count):
             if self.array_list[counter] == value:
                 index = counter
         return index
 
-    def
-    get(int
-    index){
-    if (index < 0 | | index >= array.length)
-    throw
-    new
-    IndexOutOfBoundsException("Index is out of bounds!");
-    return array[index];
-    }
+    def get(self, index):
+        if index < 0 or index >= self.count:
+            raise IndexError("Index is out of bounds!")
+        return self.array_list[index]
 
-    public
-    Object
-    set(int
-    index, Object
-    value){
-    if (index < 0 | | index >= array.length)
-        throw
-        new
-        IndexOutOfBoundsException("Index is out of bounds!");
+    def set(self, index, value):
+        if index < 0 or index >= self.count:
+            raise IndexError("Index is out of bounds!")
+        old_value = self.array_list[index]
+        self.array_list[index] = value
+        return old_value
 
-    Object
-    oldValue = array[index];
-    array[index] = value;
-    return oldValue;
+    def to_array(self):
+        number_of_elements = 0
+        for index in range(self.count):
+            if self.array_list[index] is not None:
+                number_of_elements += 1
+        new_array = Array(number_of_elements, self.data_type)
+        new_index = 0
+        for index in range(self.count):
+            if self.array_list[index] is not None:
+                new_array[new_index] = self.array_list[index]
+                new_index += 1
+        return new_array
 
-}
+    def remove(self, index):
+        if index < 0 or index >= self.count:
+            raise IndexError("Index is out of bounds!")
+        old_value = self.array_list[index]
+        for counter in range(index, self.count):
+            self.array_list[counter] = self.array_list[counter+1]
+        self.array_list[self.count - 1] = self.data_type()
+        return old_value
 
-def __str__(self):
+    #def remove(self, value):
+        result = False
+        for index in range(self.count):
+            if self.array_list[index] == value:
+                self.array_list[index] = self.data_type()
+                result = True
+        return result
+
+    def remove_all(self, values):
+        print(self.array_list)
+        changed = False
+        for index in range(len(values)):
+            for index2 in range(self.count):
+                if self.array_list[index2] == values[index]:
+                    print(self.array_list.data_type)
+                    if self.array_list.data_type == self.data_type():
+                    self.array_list[index2] = self.data_type
+                    changed = True
+        return changed
+
+    def validate
+        elif all(type(item) != int for item in value):
+            raise ValueError("list_of_numbers must all be integers")
+
+
+
+
+    def __str__(self):
         return str(self.array_list)
 
     def __repr__(self):
