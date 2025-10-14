@@ -14,3 +14,15 @@ def get_all_palindromic_strings(list_of_sub_string):
 		if element[::-1] == element:
 			list_of_palindromic_strings.append(element)
 	return list_of_palindromic_strings
+
+def get_longest_palindromic_string(list_of_palindromic_strings):
+	largest = ""
+	for element in list_of_palindromic_strings:
+		if len(element) > len(largest):
+			largest = element
+	return largest
+	
+group_of_characters = "babad"
+list_of_sub_string = get_all_sub_string(group_of_characters)
+list_of_palindromic_strings = get_all_palindromic_strings(list_of_sub_string)
+print(get_longest_palindromic_string(list_of_palindromic_strings))
