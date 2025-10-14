@@ -10,17 +10,21 @@ def get_all_sub_string(group_of_characters):
 def get_all_balanced_sub_string(list_of_sub_string):
 	balanced_sub_strings_count = {}
 	for index in range(0, len(list_of_sub_string)):
-		count_of_characters = {}
-		for count in range(0, len(list_of_sub_string[index])):
-			key = list_of_sub_string[index][count]
-			if key in count_of_characters:
-				count_of_characters[key] += 1
-			else:
-				count_of_characters[key] = 1
+		count_of_characters = iterate_through_a_list(list_of_sub_string, index)
 		if is_values_equal(count_of_characters):
 			balanced_sub_strings_count[list_of_sub_string[index]] = count_of_characters
-	return balanced_sub_strings_count	
+	return balanced_sub_strings_count
 		
+def iterate_through_a_list(list_of_sub_string, index):
+	count_of_characters = {}
+	for count in range(0, len(list_of_sub_string[index])):
+		key = list_of_sub_string[index][count]
+		if key in count_of_characters:
+			count_of_characters[key] += 1
+		else:
+			count_of_characters[key] = 1
+	return count_of_characters
+
 def is_values_equal(count_of_characters):
 	value_set = set(count_of_characters.values())
 	return len(value_set) == 1
@@ -30,7 +34,7 @@ def get_longest_sub_string(balanced_sub_strings_count):
 	for key in balanced_sub_strings_count:
 		if len(key) > len(largest):
 			largest = key
-	return largest
+	return len(largest)
 	
 #def get_longest_sub_string(balanced_sub_strings_count):
 #    return max(balanced_sub_strings_count, key=len)
@@ -40,11 +44,23 @@ list_of_sub_string = get_all_sub_string(group_of_characters)
 balanced_sub_strings_count = get_all_balanced_sub_string(list_of_sub_string)
 print(get_longest_sub_string(balanced_sub_strings_count))
 	
+
+group_of_characters = "aba"
+list_of_sub_string = get_all_sub_string(group_of_characters)
+balanced_sub_strings_count = get_all_balanced_sub_string(list_of_sub_string)
+print(get_longest_sub_string(balanced_sub_strings_count))
 	
 	
+group_of_characters = "abbac"
+list_of_sub_string = get_all_sub_string(group_of_characters)
+balanced_sub_strings_count = get_all_balanced_sub_string(list_of_sub_string)
+print(get_longest_sub_string(balanced_sub_strings_count))
 	
-	
-	
+
+group_of_characters = "aabcc"
+list_of_sub_string = get_all_sub_string(group_of_characters)
+balanced_sub_strings_count = get_all_balanced_sub_string(list_of_sub_string)
+print(get_longest_sub_string(balanced_sub_strings_count))
 	
 	
 	
